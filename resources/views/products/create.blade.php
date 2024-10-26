@@ -8,31 +8,29 @@
 <body>
 <div class="container">
         <h1>Create Product</h1>
-        <form action="{{route('product.store'}}" method="post"> 
-            @csrf
-            <!-- Change action URL as needed -->
-            <div class="form-group">
-                <label for="product-name">Product Name:</label>
-                <input type="text" id="product-name" name="name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="product-description">Description:</label>
-                <textarea id="product-description" name="description" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="product-price">Price:</label>
-                <input type="number" id="product-price" name="price" step="0.01" required>
-            </div>
-
-            <div class="form-group">
-                <label for="product-quantity">Quantity:</label>
-                <input type="number" id="product-quantity" name="quantity" required>
-            </div>
-
-            <button type="submit">Create Product</button>
-        </form>
+        <form method="post" action="{{route('product.store')}}">
+        @csrf 
+        @method('post')
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" />
+        </div>
+        <div>
+            <label>Qty</label>
+            <input type="text" name="qty" placeholder="Qty" />
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" name="price" placeholder="Price" />
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description" />
+        </div>
+        <div>
+            <input type="submit" value="Save a New Product" />
+        </div>
+    </form>
     </div>
     <style>
         body {
