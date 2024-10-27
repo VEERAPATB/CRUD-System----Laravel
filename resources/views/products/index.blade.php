@@ -6,11 +6,20 @@
     
     <!-- Corrected link to your CSS file -->
     <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/alert-success.css') }}">
     
     <title>Product List</title>
 </head>
 <body>
+
     <h1>Product</h1>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <h2>Success!</h2>
+            <p>Your data has been updated successfully.</p>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
     <div class="table-container">
         <table border="1">
             <thead>
@@ -39,5 +48,9 @@
             </tbody>
         </table>
     </div>
+    
+     <!-- Link to your JavaScript file -->
+    <script src="{{ asset('assets/js/alert.js') }}"></script>
+
 </body>
 </html>

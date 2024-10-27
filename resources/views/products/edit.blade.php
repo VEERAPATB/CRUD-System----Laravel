@@ -11,9 +11,9 @@
 <body>
     <div class="container">
         <h1>Create Product</h1>
-        <form method="post" action="">
+        <form method="post" action="{{route('product.update', ['product' =>$product])}}">
         @csrf 
-        @method('post')
+        @method('put')
         <div class="form-group">
                 <label for="product-name">Edit Infomation Product:</label>
                 <input type="text" id="name" name="name" value="{{$product->name}}" required>

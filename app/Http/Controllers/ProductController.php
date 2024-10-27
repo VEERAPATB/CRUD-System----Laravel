@@ -42,4 +42,15 @@ class ProductController extends Controller
         return view('products.edit', ['product' => $product]);
     }   
     
+    public function update(Product $product, Request $request){
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'qty' => 'required|integer|min:1',
+            'price' => 'required|numeric|between:0,99999.99',
+            'description' => 'nullable|string|max:1000'
+        ]);
+        $product->update($data);
+
+        return redirect(route('product.index'))->with('success','Product Updated Succesffully ');
+    }
 }
