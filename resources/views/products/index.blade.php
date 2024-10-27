@@ -63,6 +63,11 @@
         </table>
     </div> <!-- End of table container -->
 
+    <!-- Pagination links -->
+    <div class="pagination">
+        {{ $products->links() }} <!-- Display pagination links -->
+    </div>
+
     <!-- Link to your JavaScript file for additional functionality -->
     <script src="{{ asset('assets/js/alert.js') }}"></script>
 

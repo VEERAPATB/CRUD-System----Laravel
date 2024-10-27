@@ -43,3 +43,28 @@ tbody tr:hover {
         padding: 8px;
     }
 }
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #28a745;
+    color: #fff;
+    text-decoration: none;
+    background-color: #28a745;
+}
+
+.pagination a:hover {
+    background-color: #218838;
+    color: white;
+}
+
+.pagination .active {
+    background-color: #218838;
+    color: white;
+    border: 1px solid #218838;
+}

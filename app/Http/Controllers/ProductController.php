@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
         // Retrieve all products from the database
-        $products = Product::all();
+        $products = Product::simplePaginate(10);
         
         // Return the index view with the list of products
         return view('products.index', ['products' => $products]);
