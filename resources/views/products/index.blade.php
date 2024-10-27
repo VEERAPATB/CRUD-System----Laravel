@@ -20,6 +20,7 @@
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Description</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +31,9 @@
                     <td>{{ $product->qty }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->description }}</td>
+                    <td>
+                        <a href="{{route('product.edit', ['product' => $product])}}">Edit</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

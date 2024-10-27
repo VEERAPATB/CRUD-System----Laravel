@@ -19,8 +19,7 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function store(Request $request)
-{
+    public function store(Request $request){
     // Validate inputs
     $data = $request->validate([
         'name' => 'required|string|max:255',
@@ -36,6 +35,11 @@ class ProductController extends Controller
     $newProduct = Product::create($data);
 
     return redirect(route('product.index'));
-}
+
+    }
+
+    public function edit(Product $product){
+        return view('products.edit', ['product' => $product]);
+    }   
     
 }
