@@ -51,6 +51,6 @@ class ProductController extends Controller
         ]);
         $product->update($data);
 
-        return redirect(route('product.index'))->with('success','Product Updated Succesffully ');
+        return redirect(route('product.index'))->with('success','Your data has been updated successfully.');
     }
 }
