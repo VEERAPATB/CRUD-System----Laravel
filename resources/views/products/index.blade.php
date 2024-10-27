@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <h1>Product</h1> <!-- Main heading for the product list -->
+    <h1>PRODUCT LIST</h1> <!-- Main heading for the product list -->
 
     <!-- Check for a success message in the session -->
     @if(session()->has('success'))
@@ -24,7 +24,12 @@
             </div>
         </div> <!-- End of popup div -->
     @endif
-
+    <div class= "container">
+        <div class="create-product-button">
+            <a href=" {{route('product.create')}} "><button>Create Product</button></a>
+        </div>
+    </div>
+    
     <div class="table-container"> <!-- Container for the product table -->
         <table border="1"> <!-- Start of the table with a border -->
             <thead>
@@ -34,8 +39,8 @@
                     <th>Quantity</th> <!-- Column for Product Quantity -->
                     <th>Price</th> <!-- Column for Product Price -->
                     <th>Description</th> <!-- Column for Product Description -->
-                    <th>Edit</th> <!-- Column for Edit action -->
-                    <th>Delete</th> <!-- Column for Delete action -->
+                        <th></th> 
+                        <th></th>
                 </tr>
             </thead>
             <tbody>

@@ -5,7 +5,7 @@
 }
 .table-container {
     width: 90%;
-    margin: 20px auto;
+    margin: 0px auto;
     overflow-x: auto;
 }
 h1 {
@@ -67,4 +67,29 @@ tbody tr:hover {
     background-color: #218838;
     color: white;
     border: 1px solid #218838;
+}
+
+.container {
+    max-width: 95%; /* Set a max width for the container */
+    margin: 800 auto; /* Center the container */
+    padding: 20px; /* Add padding around the container */
+}
+
+.create-product-button {
+    text-align: right; /* Align the button to the right */
+    margin-bottom: 0px; /* Add space below the button */
+}
+
+button {
+    padding: 15px 25px; /* Adjust padding for better appearance */
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
