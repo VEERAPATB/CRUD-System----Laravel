@@ -8,13 +8,28 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     // Display a listing of the products
-    public function index()
+    public function index(Request $request)
     {
-        // Retrieve all products from the database
-        $products = Product::simplePaginate(10);
-        
-        // Return the index view with the list of products
-        return view('products.index', ['products' => $products]);
+        // Initialize $search with an empty string if there's no search term
+        $search = $request->input('search', '');
+
+        // Start a query for products
+        $query = Product::query();
+
+        // Apply search conditions if a search term exists
+        if (!empty($search)) {
+            $query->where('id', 'LIKE', "%{$search}%")
+                ->orWhere('name', 'LIKE', "%{$search}%")
+                ->orWhere('description', 'LIKE', "%{$search}%")
+                ->orWhere('qty', 'LIKE', "%{$search}%")
+                ->orWhere('price', 'LIKE', "%{$search}%");
+        }
+
+        // Paginate the products (showing 10 products per page)
+        $products = $query->simplePaginate(10);
+
+        // Return the index view with the list of products and the search term
+        return view('products.index', compact('products', 'search'));
     }
 
     // Show the form for creating a new product

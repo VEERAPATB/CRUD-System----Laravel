@@ -9,9 +9,13 @@
     overflow-x: auto;
 }
 h1 {
+    font-family: Arial, sans-serif;
     text-align: center;
     color: #333;
     margin-bottom: 20px;
+}
+a {
+    text-decoration: none; /* Remove underline from all links */
 }
 table {
     width: 100%;
@@ -88,6 +92,12 @@ tbody tr:hover {
     border-radius: 10px; /* Add rounded corners */
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Center-align content in the Actions column */
+.table-container th:last-child, .table-container td:last-child {
+    width: 150px; /* Fixed width */
+    text-align: center; /* Center-align content in this column */
 }
 
 button:hover {

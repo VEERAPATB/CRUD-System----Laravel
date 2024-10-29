@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container"> <!-- Main container for the form -->
-        <h1>Create Product</h1> <!-- Heading for the form -->
+        <h1>CREATE PRODUCT</h1> <!-- Heading for the form -->
 
         <!-- Form for creating a new product -->
         <form method="post" action="{{ route('product.store') }}">
@@ -25,7 +25,7 @@
 
             <div class="form-group"> <!-- Container for the Description input -->
                 <label for="product-description">Description:</label> <!-- Label for the Description field -->
-                <textarea id="description" name="description" rows="4" required></textarea> <!-- Textarea for Product Description -->
+                <textarea id="description" name="description" placeholder="maximum 255 charecter" rows="4" required></textarea> <!-- Textarea for Product Description -->
             </div>
 
             <div class="form-group"> <!-- Container for the Price input -->
@@ -38,7 +38,16 @@
                 <input type="number" id="qty" name="qty" placeholder="0" required> <!-- Input field for Quantity -->
             </div>
 
-            <button type="submit">Create Product</button> <!-- Submit button to create the product -->
+            <div class="create-button">
+                <div class="button-back">
+                    <a href="{{ route('product.index') }}">
+                        <button type="button">Back</button> <!-- Change type to "button" to avoid validation -->
+                    </a>
+                </div>
+            
+                <button type="submit">Create Product</button> <!-- Submit button to create the product -->
+            </div>
+            
         </form>
     </div>
 </body>

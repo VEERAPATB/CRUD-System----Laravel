@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container"> <!-- Main container for the form -->
-        <h1>Edit Product</h1> <!-- Heading for the form -->
+        <h1>EDIT PRODUCT</h1> <!-- Heading for the form -->
 
         <!-- Form for editing an existing product -->
         <form method="post" action="{{ route('product.update', ['product' => $product]) }}">
@@ -19,13 +19,13 @@
             @method('put') <!-- Specify the request method as PUT for updating -->
 
             <div class="form-group"> <!-- Container for the Product Name input -->
-                <label for="product-name">Edit Information Product:</label> <!-- Label for the Product Name field -->
+                <label for="product-name">Name product:</label> <!-- Label for the Product Name field -->
                 <input type="text" id="name" name="name" value="{{ $product->name }}" required> <!-- Input field for Product Name, pre-filled with existing value -->
             </div>
 
             <div class="form-group"> <!-- Container for the Description input -->
                 <label for="product-description">Description:</label> <!-- Label for the Description field -->
-                <textarea id="description" name="description" rows="4" required>{{ $product->description }}</textarea> <!-- Textarea for Product Description, pre-filled with existing value -->
+                <textarea id="description" name="description" placeholder="maximum 255 charecter" rows="4" required>{{ $product->description }}</textarea> <!-- Textarea for Product Description, pre-filled with existing value -->
             </div>
 
             <div class="form-group"> <!-- Container for the Price input -->
