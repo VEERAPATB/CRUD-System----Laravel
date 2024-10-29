@@ -6,17 +6,18 @@ use Illuminate\View\Component;
 
 class Button extends Component
 {
-    public $type;
     public $text;
     public $url;
-    public $color;
+    public $type;
+    public $variant;
+    
 
-    public function __construct($text = 'Button', $url = '#', $type = 'button', $color = 'primary')
+    public function __construct($text = 'Button', $url = '#', $type = 'button', $variant = 'primary')
     {
         $this->text = $text;
         $this->url = $url;
         $this->type = $type;
-        $this->color = $color;
+        $this->variant = $variant; // e.g., 'create', 'edit', 'delete'
     }
 
     public function render()

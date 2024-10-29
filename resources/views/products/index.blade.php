@@ -17,13 +17,10 @@
                 <div class="input-group mb-3">
                     <input type="text" name="search" value="{{ request('search') }}" class="form-control" placeholder="Name product">
                     <button type="submit" class="btn btn-primary">Search</button>
+
                 </div>
             </form>
-
-            <div class="create-product-button">
-                <a href="{{ route('product.create') }}"><button>Create Product</button></a>
-                <x-button text="Create Product" url="{{ route('product.create') }}" />
-            </div>
+            <x-button text="Create Product" url="{{ route('product.create') }}" variant="create" />
         </div>
     </div>
 
@@ -48,13 +45,16 @@
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
                         <td>
-                            <a href="{{ route('product.edit', $product) }}">
-                                <button class="action-button edit-button">Edit</button>
-                            </a>
+                             <!-- Edit Button -->
+                            <x-button text="Edit" url="{{ route('product.edit', $product->id) }}" variant="edit" />
+                            <!--
+                                <a href="{{ route('product.edit', $product) }}">
+                                <button class="action-button edit-button">Edit</button> 
+                            </a>-->
                             <form method="post" action="{{ route('product.delete', $product) }}" style="display:inline" data-product-id="{{ $product->id }}">
                                 @csrf
                                 @method('delete')
-                                <button type="button" class="action-button delete-button" onclick="confirmDelete('{{ $product->id }}', '{{ $product->name }}')">Delete</button>
+                                <button type="button" class="action-button delete-button" onclick="confirmDelete('{{ $product->id }}', '{{ $product->name }}')">Delete</button> 
                             </form>
                         </td>
                     </tr>

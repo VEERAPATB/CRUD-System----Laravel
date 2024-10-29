@@ -98,22 +98,6 @@ tbody tr:hover {
     margin: 20px 0;               /* Margin above and below the container */
 }
 
-/* Style for Create Product button */
-.create-product-button a button {
-    background-color: #28a745; /* Green background */
-    color: white;              /* White text color */
-    border: none;              /* Remove border */
-    padding: 10px 20px;        /* Padding for size */
-    font-size: 16px;           /* Font size */
-    cursor: pointer;           /* Pointer cursor on hover */
-    border-radius: 5px;       /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-/* Hover effect for Create Product button */
-.create-product-button a button:hover {
-    background-color: #218838; /* Darker green on hover */
-}
 
 /* Style for Search button */
 .btn-primary {
@@ -125,11 +109,6 @@ tbody tr:hover {
     cursor: pointer;           /* Pointer cursor on hover */
     border-radius: 5px;       /* Rounded corners */
     transition: background-color 0.3s; /* Smooth transition */
-}
-
-/* Hover effect for Search button */
-.btn-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Input field styling */
@@ -167,14 +146,6 @@ tbody tr:hover {
     margin-right: 16px; /* Space between buttons */
 }
 
-/* Specific styling for Edit button */
-.edit-button {
-    background-color: #28a745; /* Green background for Edit button */
-}
-
-.edit-button:hover {
-    background-color: #218838; /* Darker green on hover */
-}
 
 /* Specific styling for Delete button */
 .delete-button {

@@ -1,0 +1,41 @@
+.btn {
+    padding: 8px 16px; /* Padding for button size */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    text-decoration: none; /* Remove underline for link buttons */
+    margin-right: 16px; /* Space between buttons */
+}
+
+
+/* Variant styles for different button types */
+.btn-create {
+    background-color: #28a745; /* Green */
+    padding: 10px 20px;        /* Padding for size */
+    font-size: 16px;           /* Font size */
+}
+
+.btn-create:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.btn-edit {
+    background-color: #007bff; /* Blue */
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Red */
+}
+
+.btn-delete:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+
