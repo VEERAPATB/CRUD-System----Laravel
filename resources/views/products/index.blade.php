@@ -39,8 +39,8 @@
                     <th>Quantity</th> <!-- Column for Product Quantity -->
                     <th>Price</th> <!-- Column for Product Price -->
                     <th>Description</th> <!-- Column for Product Description -->
-                        <th></th> 
-                        <th></th>
+                    <th></th> 
+                    
                 </tr>
             </thead>
             <tbody>
@@ -52,16 +52,17 @@
                     <td>{{ $product->price }}</td> <!-- Display Product Price -->
                     <td>{{ $product->description }}</td> <!-- Display Product Description -->
                     <td>
-                        <a href="{{ route('product.edit', ['product' => $product]) }}">Edit</a> <!-- Link to edit the product -->
-                    </td>
-                    <td>
-                        <!-- Form for deleting a product -->
-                        <form method="post" action="{{ route('product.delete', ['product' => $product]) }}">
-                            @csrf <!-- CSRF protection token -->
-                            @method('delete') <!-- Specify the request method as DELETE -->
-                            <input type="submit" value="Delete"/> <!-- Submit button to delete the product -->
+                        <!-- Edit button -->
+                        <a href="{{ route('product.edit', ['product' => $product]) }}">
+                            <button class="action-button edit-button">Edit</button>
+                        </a>
+                        <!-- Delete button in a form -->
+                        <form method="post" action="{{ route('product.delete', ['product' => $product]) }}" style="display:inline">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="action-button delete-button" onclick="return confirm('Are you sure you want to delete this product?');">Delete</button>
                         </form>
-                    </td>   
+                    </td>
                 </tr>
                 @endforeach <!-- End of products loop -->
             </tbody>

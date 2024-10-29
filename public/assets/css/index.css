@@ -80,7 +80,7 @@ tbody tr:hover {
     margin-bottom: 0px; /* Add space below the button */
 }
 
-button {
+.create-product-button button {
     padding: 15px 25px; /* Adjust padding for better appearance */
     background-color: #007BFF; /* Button background color */
     color: white; /* Button text color */
@@ -92,4 +92,35 @@ button {
 
 button:hover {
     background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* General styling for action buttons */
+.action-button {
+    padding: 8px 16px; /* Padding for button size */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    text-decoration: none; /* Remove underline for link buttons */
+    margin-right: 16px; /* Space between buttons */
+}
+
+/* Specific styling for Edit button */
+.edit-button {
+    background-color: #28a745; /* Green background for Edit button */
+}
+
+.edit-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Specific styling for Delete button */
+.delete-button {
+    background-color: #dc3545; /* Red background for Delete button */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
 }
