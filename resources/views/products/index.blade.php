@@ -22,6 +22,7 @@
 
             <div class="create-product-button">
                 <a href="{{ route('product.create') }}"><button>Create Product</button></a>
+                <x-button text="Create Product" url="{{ route('product.create') }}" />
             </div>
         </div>
     </div>
