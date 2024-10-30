@@ -62,3 +62,11 @@
     font-size: 16px;           /* Font size */
 }
 
+.btn-add {
+    background-color: #f15a1e; /* Blue */
+}
+
+.btn-add:hover {
+    background-color: #f84f0c; /* Darker blue on hover */
+}
+

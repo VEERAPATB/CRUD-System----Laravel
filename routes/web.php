@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route; // Import the Route facade for defining routes
 use App\Http\Controllers\ProductController; // Import the ProductController
-
+use App\Http\Controllers\CartController; // Import the CartController
 /*
 |---------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 // Route to display the list of products
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('products', [ProductController::class, 'index'])->name('product.index');
 
 // Route to show the form for creating a new product
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
@@ -36,4 +37,10 @@ Route::put('/product/{product}/update', [ProductController::class, 'update'])->n
 
 // Route to delete a product from the database
 Route::delete('/product/{product}/delete', [ProductController::class, 'delete'])->name('product.delete'); // Fixed typo in 'delete' from 'detele'
-Route::delete('products/multi-delete', [ProductController::class, 'multiDelete'])->name('product.multi-delete');
+Route::delete('/product/multi-delete', [ProductController::class, 'multiDelete'])->name('product.multi-delete');
+
+Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view');
+Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
+
+
+
