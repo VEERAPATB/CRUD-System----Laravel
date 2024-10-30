@@ -17,18 +17,21 @@
                 <div class="input-group mb-3">
                     <input type="text" name="search" value="{{ request('search') }}" class="form-control" placeholder="Name product">
                     <button type="submit" class="btn btn-primary">Search</button>
-
                 </div>
             </form>
             <x-button text="Create Product" url="{{ route('product.create') }}" variant="create" />
+
+            <!-- Delete Selected Button -->
+            <button id="delete-selected-btn" class="multi-delete-btn" onclick="confirmMultiDelete()" disabled>Delete All</button>
         </div>
     </div>
-
+        
     <div class="table-container">
         <table border="1">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <!-- Checkbox Header for Select All -->
+                    <th><input type="checkbox" id="select-all-checkbox" onclick="toggleSelectAll(this)">ID</th>
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
@@ -39,7 +42,8 @@
             <tbody>
                 @forelse($products as $product)
                     <tr>
-                        <td>{{ $product->id }}</td>
+                        <!-- Checkbox for each product row -->
+                        <td><input type="checkbox" name="selected_products[]" value="{{ $product->id }}" class="product-checkbox" onclick="toggleDeleteButton()">{{ $product->id}}</td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->qty }}</td>
                         <td>{{ $product->price }}</td>
@@ -47,10 +51,6 @@
                         <td>
                             <!-- Edit Button -->
                             <x-button text="Edit" url="{{ route('product.edit', $product->id) }}" variant="edit" />
-                            <!--
-                                <a href="{{ route('product.edit', $product) }}">
-                                <button class="action-button edit-button">Edit</button> 
-                            </a>-->
                             
                             <!-- Delete Button -->
                             <form method="post" action="{{ route('product.delete', $product) }}" style="display:inline" data-product-id="{{ $product->id }}">
@@ -73,7 +73,7 @@
         {{ $products->appends(['search' => request('search')])->links() }}
     </div>
 
-    <!-- Delete Confirmation Popup -->
+    <!-- Delete Confirmation Popup for Single Item -->
     <div class="popup-overlay" id="delete-popup" style="display: none;">
         <div class="popup-content">
             <h2>Confirm Deletion</h2>
@@ -83,6 +83,15 @@
         </div>
     </div>
 
+    <!-- Multi-Delete Confirmation Popup -->
+    <div class="popup-overlay" id="multi-delete-popup" style="display: none;">
+        <div class="popup-content">
+            <h2>Confirm Multi-Deletion</h2>
+            <p>Are you sure you want to delete the selected products?</p>
+            <button class="confirm-delete-btn" onclick="deleteSelectedProducts()">Yes, Delete</button>
+            <button class="close-btn" onclick="closeMultiDeletePopup()">Cancel</button>
+        </div>
+    </div>
 
     @if(session()->has('success'))
         <div class="popup-overlay" id="popup">
@@ -94,6 +103,9 @@
         </div>
     @endif
 
+    <!-- JavaScript for Select All, Multi-Delete, and Alert -->
     <script src="{{ asset('assets/js/alert.js') }}"></script>
+    <script src="{{ asset('assets/js/muti-delete.js') }}"></script>
+    
 </body>
 </html>

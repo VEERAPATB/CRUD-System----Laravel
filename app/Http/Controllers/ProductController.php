@@ -91,4 +91,10 @@ class ProductController extends Controller
         // Redirect to the product index page with a success message
         return redirect(route('product.index'))->with('success', 'Your data has been deleted successfully.');
     }
+    public function multiDelete(Request $request)
+    {
+        Product::whereIn('id', $request->product_ids)->delete();
+        return redirect()->route('product.index')->with('success', 'Selected products have been deleted successfully.');
+    }
+
 }

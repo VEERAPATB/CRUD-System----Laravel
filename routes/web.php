@@ -36,3 +36,4 @@ Route::put('/product/{product}/update', [ProductController::class, 'update'])->n
 
 // Route to delete a product from the database
 Route::delete('/product/{product}/delete', [ProductController::class, 'delete'])->name('product.delete'); // Fixed typo in 'delete' from 'detele'
+Route::delete('products/multi-delete', [ProductController::class, 'multiDelete'])->name('product.multi-delete');
