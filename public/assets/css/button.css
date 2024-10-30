@@ -38,4 +38,27 @@
     background-color: #c82333; /* Darker red on hover */
 }
 
+.btn-submit{
+    background-color: #28a745; /* Green */
+    padding: 10px 20px;        /* Padding for size */
+    font-size: 16px;           /* Font size */
+}
+
+.btn-submit:hover{
+    background-color: #218838; /* Darker green on hover */
+    padding: 10px 20px;        /* Padding for size */
+    font-size: 16px;           /* Font size */
+}
+
+.btn-back{
+    background-color: black; /* Green */
+    padding: 10px 20px;        /* Padding for size */
+    font-size: 16px;           /* Font size */
+}
+
+.btn-back:hover{
+    background-color: #333; /* Darker green on hover */
+    padding: 10px 20px;        /* Padding for size */
+    font-size: 16px;           /* Font size */
+}
 

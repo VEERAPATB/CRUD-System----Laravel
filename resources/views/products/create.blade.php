@@ -38,16 +38,12 @@
                 <input type="number" id="qty" name="qty" placeholder="0" required> <!-- Input field for Quantity -->
             </div>
 
-            <div class="create-button">
-                <div class="button-back">
-                    <a href="{{ route('product.index') }}">
-                        <button type="button">Back</button> <!-- Change type to "button" to avoid validation -->
-                    </a>
-                </div>
-            
-                <button type="submit">Create Product</button> <!-- Submit button to create the product -->
+            <div class="create-button ">
+                <x-button text="Back" type="button" url="{{route('product.index')}}" variant="back" />
+                <!-- Edit Button -->
+                <x-button text="Create Product" type="submit" variant="submit" />
             </div>
-            
+        
         </form>
     </div>
 </body>

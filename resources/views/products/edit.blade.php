@@ -38,7 +38,13 @@
                 <input type="number" id="qty" name="qty" placeholder="0" value="{{ $product->qty }}" required> <!-- Input field for Quantity, pre-filled with existing value -->
             </div>
 
-            <button type="submit">Update Product</button> <!-- Submit button to update the product -->
+            <div class="create-button ">
+                <x-button text="Back" type="button" url="{{route('product.index')}}" variant="back" />
+                <!-- Edit Button -->
+                <x-button text="Confirm" type="submit" variant="submit" />
+            </div>
+            
+            
         </form>
     </div>
 </body>

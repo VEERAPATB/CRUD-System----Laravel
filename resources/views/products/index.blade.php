@@ -45,12 +45,14 @@
                         <td>{{ $product->price }}</td>
                         <td>{{ $product->description }}</td>
                         <td>
-                             <!-- Edit Button -->
+                            <!-- Edit Button -->
                             <x-button text="Edit" url="{{ route('product.edit', $product->id) }}" variant="edit" />
                             <!--
                                 <a href="{{ route('product.edit', $product) }}">
                                 <button class="action-button edit-button">Edit</button> 
                             </a>-->
+                            
+                            <!-- Delete Button -->
                             <form method="post" action="{{ route('product.delete', $product) }}" style="display:inline" data-product-id="{{ $product->id }}">
                                 @csrf
                                 @method('delete')
@@ -93,6 +95,5 @@
     @endif
 
     <script src="{{ asset('assets/js/alert.js') }}"></script>
-
 </body>
 </html>
