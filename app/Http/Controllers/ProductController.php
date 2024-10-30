@@ -8,36 +8,29 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     // Display a listing of the products
-    public function index(Request $request){
-
+    public function index(Request $request)
+    {
+        // Initialize $search with an empty string if there's no search term
         $search = $request->input('search', '');
 
-            $query = Product::query();
+        // Start a query for products
+        $query = Product::query();
 
-            // Apply search conditions if a search term exists
-            if (!empty($search)) {
-                $query->where('id', 'LIKE', "%{$search}%")
-                    ->orWhere('name', 'LIKE', "%{$search}%")
-                    ->orWhere('description', 'LIKE', "%{$search}%")
-                    ->orWhere('qty', 'LIKE', "%{$search}%")
-                    ->orWhere('price', 'LIKE', "%{$search}%");
-            }
-
-            // Apply sorting if sort and order parameters exist
-            if ($request->has('sort') && $request->has('order')) {
-                $query->orderBy($request->sort, $request->order);
-            } else {
-                // Default sorting by ID ascending if no sort is specified
-                $query->orderBy('id', 'asc');
-            }
-
-            // Paginate the products (showing 10 products per page)
-            $products = $query->simplePaginate(10);
-
-            return view('products.index', compact('products', 'search'));
+        // Apply search conditions if a search term exists
+        if (!empty($search)) {
+            $query->where('id', 'LIKE', "%{$search}%")
+                ->orWhere('name', 'LIKE', "%{$search}%")
+                ->orWhere('description', 'LIKE', "%{$search}%")
+                ->orWhere('qty', 'LIKE', "%{$search}%")
+                ->orWhere('price', 'LIKE', "%{$search}%");
         }
 
+        // Paginate the products (showing 10 products per page)
+        $products = $query->simplePaginate(10);
 
+        // Return the index view with the list of products and the search term
+        return view('products.index', compact('products', 'search'));
+    }
 
     // Show the form for creating a new product
     public function create()
@@ -98,13 +91,11 @@ class ProductController extends Controller
         // Redirect to the product index page with a success message
         return redirect(route('product.index'))->with('success', 'Your data has been deleted successfully.');
     }
+
     public function multiDelete(Request $request)
     {
-        $productIds = $request->input('product_ids', []);
-        Product::whereIn('id', $productIds)->delete();
-
-        return redirect()->route('product.index')->with('success', 'Products deleted successfully.');
+        Product::whereIn('id', $request->product_ids)->delete();
+        return redirect()->route('product.index')->with('success', 'Selected products have been deleted successfully.');
     }
-    
 
 }

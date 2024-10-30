@@ -21,7 +21,6 @@ Route::get('/', function () {
 
 // Route to display the list of products
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-Route::get('products', [ProductController::class, 'index'])->name('product.index');
 
 // Route to show the form for creating a new product
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
@@ -38,6 +37,3 @@ Route::put('/product/{product}/update', [ProductController::class, 'update'])->n
 // Route to delete a product from the database
 Route::delete('/product/{product}/delete', [ProductController::class, 'delete'])->name('product.delete'); // Fixed typo in 'delete' from 'detele'
 Route::delete('/product/multi-delete', [ProductController::class, 'multiDelete'])->name('product.multi-delete');
-
-
-

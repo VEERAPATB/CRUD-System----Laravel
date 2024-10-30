@@ -1,8 +1,10 @@
+<!-- Link to the button styles -->
 <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}">
 
 <!-- resources/views/components/button.blade.php -->
 @props(['text', 'url', 'type', 'variant', 'onclick'])
 
+<!-- Check the type of button to render accordingly -->
 @if ($type === 'submit')
     <button 
         type="submit" 
