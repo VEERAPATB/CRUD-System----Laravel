@@ -1,5 +1,5 @@
 .btn {
-    padding: 8px 16px; /* Padding for button size */
+    padding: 10px 20px; /* Padding for button size */
     color: white; /* White text color */
     border: none; /* Remove border */
     border-radius: 4px; /* Rounded corners */
@@ -7,7 +7,6 @@
     font-size: 14px; /* Font size */
     transition: background-color 0.3s ease; /* Smooth background color transition */
     text-decoration: none; /* Remove underline for link buttons */
-    margin-right: 16px; /* Space between buttons */
 }
 
 

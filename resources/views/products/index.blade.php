@@ -61,7 +61,7 @@
                             <td>{{ $product->description }}</td>
                             <td>
                                 <div class="action-buttons"> <!-- New container for buttons -->
-                                    <form method="POST" action="{{ route('cart.add', $product->id) }}" class="inline-form">
+                                    <form method="POST" action="#" class="inline-form">
                                         @csrf
                                         <x-button text="Add" type="submit" variant="add" />
                                     </form>

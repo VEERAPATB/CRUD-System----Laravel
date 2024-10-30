@@ -57,7 +57,7 @@ h1 {
 
 /* General button styles */
 button, .action-button {
-    padding: 8px 16px; /* Padding for button size */
+    padding: 10px 20px; /* Padding for button size */
     color: white; /* White text color */
     border: none; /* Remove border */
     border-radius: 4px; /* Rounded corners */
